@@ -243,6 +243,12 @@ var Global_FN = {
 	datePickerBindChange (value) {
 		layui.use([], function() {
 			let $ = layui.jquery;
+			//初始化
+			let date_ = new Date();
+			let year_ = date_.getFullYear();
+			let mon_ = date_.getMonth() + 1;
+			let day_ = date_.getDate();
+			$('.'+value).text(year_ + "-0" + mon_ + "-0" + day_ );
 			$('#'+value).on('click', function () {
 				
 				weui.datePicker({
