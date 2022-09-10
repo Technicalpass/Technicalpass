@@ -248,7 +248,10 @@ var Global_FN = {
 			let year_ = date_.getFullYear();
 			let mon_ = date_.getMonth() + 1;
 			let day_ = date_.getDate();
-			$('.'+value).text(year_ + "-0" + mon_ + "-0" + day_ );
+			var mmm = "", ddd = "";
+			mon_.toString().length === 1 ? mmm = "0" + mon_ : mmm = mon_.toString();
+			day_.toString().length === 1 ? ddd = "0" + day_ : ddd = day_.toString();
+			$('.'+value).text(year_ + "-"+ mmm + "-" + ddd );
 			$('#'+value).on('click', function () {
 				
 				weui.datePicker({
